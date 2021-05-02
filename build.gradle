@@ -13,7 +13,8 @@ def allureVersion = "2.13.9",
     junitVersion = "5.7.1",
     aspectJWeaverVersion = "1.9.6",
     ownerVersion = "1.0.12",
-    assertjCoreVersion = "3.19.0"
+    assertjCoreVersion = "3.19.0",
+    slf4jVersion = "1.7.30"
 
 allure {
     version = allureVersion
@@ -27,6 +28,7 @@ allure {
 
 dependencies {
     testImplementation(
+            "org.slf4j:slf4j-api:$slf4jVersion",
             "org.aspectj:aspectjweaver:$aspectJWeaverVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",

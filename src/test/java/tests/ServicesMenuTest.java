@@ -1,10 +1,13 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RootMenuPage;
+import ru.greenatom.allure.allure.JiraIssue;
 
 import static com.codeborne.selenide.Selenide.open;
 
+@Tag("web")
 public class ServicesMenuTest extends BaseTest {
 
     private RootMenuPage rootMenuPage = new RootMenuPage();
@@ -12,6 +15,7 @@ public class ServicesMenuTest extends BaseTest {
     public static final String CORPORATE_IT_SYSTEMS = "Корпоративные ИТ-системы";
 
 
+    @JiraIssue("QC3-30")
     @Test
     public void checkITServiceIsAvailable() {
         open("/");
@@ -20,6 +24,7 @@ public class ServicesMenuTest extends BaseTest {
         rootMenuPage.checkServiceIsAvailable(IT_SERVICE);
     }
 
+    @JiraIssue("QC3-30")
     @Test
     public void checkCorporateITServiceIsAvailable() {
         open("/");

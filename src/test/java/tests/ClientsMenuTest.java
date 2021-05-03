@@ -6,6 +6,7 @@ import pages.RootMenuPage;
 import ru.greenatom.allure.allure.JiraIssue;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 
 @Tag("web")
 public class ClientsMenuTest extends BaseTest {
@@ -18,7 +19,9 @@ public class ClientsMenuTest extends BaseTest {
     @Test
     public void checkClientIntegratorIsAvailable() {
         open("/");
+        sleep(5000);
         rootMenuPage.showClients();
+        sleep(5000);
         rootMenuPage.checkClientIntegratorIsAvailable(INTEGRATOR_CLIENT);
     }
 

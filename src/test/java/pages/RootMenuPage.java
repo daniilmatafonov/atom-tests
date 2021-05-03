@@ -17,9 +17,14 @@ public class RootMenuPage {
         $("ul.navigation-root li.navigation-list-item a[href='/services/']").click();
     }
 
+    @Step("Проверить доступность услуги {serviceName}")
+    public void openService(final String serviceName) {
+        $("#additional-menu ul li a[href='/services/it-services/']").click();
+    }
+
     @Step("Проверить доступность услуги Информационные технологии")
-    public void checkITServiceIsAvailable() {
-        $("#additional-menu ul li a[href='/services/it-services/']").shouldHave(text("Информационные технологии"));
+    public void checkITServiceIsAvailable(final String serviceName) {
+        $(".main-title").shouldHave(text(serviceName));
     }
 
     @Step("Проверить доступность клиента Интегратор")

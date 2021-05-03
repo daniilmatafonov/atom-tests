@@ -19,6 +19,11 @@ public class RootMenuPage {
         $("ul.navigation-root li.navigation-list-item a[href='/services/']").click();
     }
 
+    @Step("Открыть раздел Пресс-центр")
+    public void showPressCenter() {
+        $("ul.navigation-root li.navigation-list-item a[href='/press-center/']").click();
+    }
+
     @Step("Открыть страницу услуг: {serviceName}")
     public void openService(final String serviceName) {
         String linkSelector = "";
@@ -32,11 +37,21 @@ public class RootMenuPage {
 
     @Step("Проверить доступность услуги {serviceName}")
     public void checkServiceIsAvailable(final String serviceName) {
-        $(".main-title").shouldHave(text(serviceName));
+        $("h1.main-title").shouldHave(text(serviceName));
     }
 
     @Step("Проверить доступность клиента {clientName}")
     public void checkClientIntegratorIsAvailable(final String clientName) {
         $("a.block-clients-list[href='/clients/integrator']").shouldHave(text(clientName));
+    }
+
+    @Step("Проверить доступность клиента {clientName}")
+    public void checkNewBusinessesIsAvailable(final String clientName) {
+        $("a.block-clients-list[href='/clients/new_businesses']").shouldHave(text(clientName));
+    }
+
+    @Step("Проверить доступность раздела {companyNews}")
+    public void checkCompanyNewsIsAvailable(final String companyNews) {
+        $("h1.main-title").shouldHave(text(companyNews));
     }
 }

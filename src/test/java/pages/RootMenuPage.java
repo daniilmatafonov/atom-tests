@@ -19,7 +19,7 @@ public class RootMenuPage {
         $("ul.navigation-root li.navigation-list-item a[href='/services/']").click();
     }
 
-    @Step("Проверить доступность услуги {serviceName}")
+    @Step("Открыть страницу услуг: {serviceName}")
     public void openService(final String serviceName) {
         String linkSelector = "";
         if (serviceName.equals(IT_SERVICE)) {
